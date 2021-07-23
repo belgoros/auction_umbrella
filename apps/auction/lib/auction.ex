@@ -7,6 +7,8 @@ defmodule Auction do
 
   def new_user, do: User.changeset_with_password(%User{})
 
+  def new_bid, do: Bid.changeset(%Bid{})
+
   def insert_bid(params) do
     %Bid{}
     |> Bid.changeset(params)
