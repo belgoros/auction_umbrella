@@ -5,6 +5,10 @@ defmodule AuctionWeb.Api.ItemView do
     %{data: render_one(item, __MODULE__, "item.json")}
   end
 
+  def render("index.json", %{items: items}) do
+    %{data: render_many(items, __MODULE__, "item.json")}
+  end
+
   def render("item.json", %{item: item}) do
     %{
       data: %{
