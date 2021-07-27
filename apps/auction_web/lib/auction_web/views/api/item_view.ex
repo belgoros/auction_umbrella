@@ -2,6 +2,10 @@ defmodule AuctionWeb.Api.ItemView do
   use AuctionWeb, :view
 
   def render("show.json", %{item: item}) do
+    %{data: render_one(item, __MODULE__, "item.json")}
+  end
+
+  def render("item.json", %{item: item}) do
     %{
       data: %{
         type: "item",
